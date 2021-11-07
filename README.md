@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Sistema eCommerce para pequena empresa do ramo alimentício - Repositório da Aplicação Admin
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Essa é a aplicação com a interface gráfica do administrador construída para navegadores Web, nela é possível realizar o gerenciamento e controle dos produtos disponíveis na loja.
 
-## Available Scripts
+# 📦 Repositórios integrantes do projeto
 
-In the project directory, you can run:
+| Repositório                                                       | Descrição                                                                          |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| [docesGraces](https://github.com/doceGraceseCommerce/docesGraces) | Apresentação e documentação                                                        |
+| [client](https://github.com/doceGraceseCommerce/client)           | Aplicação Client com a interface do cliente                                        |
+| [admin](https://github.com/doceGraceseCommerce/admin)             | Aplicação Admin com a interface da vendedora                                       |
+| [server](https://github.com/doceGraceseCommerce/server)           | Aplicação Server que recebe as requisições do cliente e da vendedora e armazena ou busca no banco |
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# ⚙️ Instruções de Instalação e Uso
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<ul>
+<li><b>Node.js</b></li>
+<ul>
+<li>Baixe e instale o ambiente de excecução Node.js:</li>
+<a href="https://nodejs.org/en/download">Node.js</a>
+</ul>
+</ul>
 
-### `npm test`
+<ul>
+<li><b>Dependências</b></li>
+<ul>
+<li>Abra o terminal na raiz desse repositório e instale as dependências necessárias:
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+$ npm install
+```
 
-### `npm run build`
+</li>
+</ul>
+</ul>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<ul>
+<li><b>Criação das Variáveis</b></li>
+<ul>
+<li>Crie um arquivo <b>.env</b> e configure as variáveis a seguir:
+<br/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+REACT_APP_BACKEND=endereco_do_back_end
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+</li>
+</ul>
+</ul>
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<ul>
+<li><b>Execute a aplicação</b></li>
+<ul>
+<li>Abra o terminal na raiz desse repositório e execute o comando:
+<br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+$ npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</li>
+</ul>
+  
+  
+</ul>
