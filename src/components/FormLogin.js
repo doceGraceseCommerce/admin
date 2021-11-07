@@ -21,7 +21,7 @@ function FormLogin() {
       .then(res => {
         console.log(res)
         localStorage.setItem("token", res.data.token)
-        history.push('/')
+        window.location.href = '/'
       })
       .catch(e => {
         console.log(e.response.data.message)
