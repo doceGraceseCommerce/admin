@@ -1,0 +1,80 @@
+.cadastro-nome, .cadastro-descricao, .cadastro-inf {
+  background: rgba( 133, 138, 227, 0.4);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+  backdrop-filter: blur( 4.5px);
+  -webkit-backdrop-filter: blur( 4.5px);
+  border-radius: 5px;
+  border: 1px solid rgba( 255, 255, 255, 0.18);
+  width: 786px;
+}
+
+.cadastro-nome, .cadastro-descricao {
+  height: 25px;
+}
+
+.cadastro-inf {
+  height: 149px;
+}
+
+.cadastro-display {
+  width: 995px;
+  height: 220px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.imagem {
+  width: 184px;
+  height: 184px;
+  object-fit: cover;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  width: 184px;
+  height: 25px;
+  font-size: 12px;
+  background: rgba( 133, 138, 227, 0.35);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+  backdrop-filter: blur( 7px);
+  -webkit-backdrop-filter: blur( 7px);
+  border-radius: 5px;
+  border: 1px solid rgba( 255, 255, 255, 0.18);
+  cursor: pointer;
+  color: #5C64EB;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+}
+
+.upload-imagem, .cadastro-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cadastro-produto {
+  margin-left: 15px;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+.cadastrar-botao {
+  width: 250px;
+  height: 40px;
+  background: rgba( 133, 138, 227, 0.35);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+  backdrop-filter: blur( 7px);
+  -webkit-backdrop-filter: blur( 7px);
+  border-radius: 5px;
+  border: 1px solid rgba( 255, 255, 255, 0.18);
+  cursor: pointer;
+  color: #5C64EB;
+  margin-top: 10px;
+  margin-left: 20px;
+}
