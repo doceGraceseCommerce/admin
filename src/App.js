@@ -16,11 +16,11 @@ function App() {
       <Switch>
         <div className="App">
           <Navbar />
-          <div>
+          <div className="content">
             <div>
               <Route path='/login' component={LoginPage} exact />
             </div>
-            <div className="wrap-all">
+            <div>
               <PrivateRoute path='/' component={TodosProdutos} exact />
               <PrivateRoute path='/todos-produtos' component={TodosProdutos} exact />
               <PrivateRoute path='/cadastro-produto' component={Cadastro} exact />

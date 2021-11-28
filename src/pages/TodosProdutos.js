@@ -16,7 +16,7 @@ function TodosProdutos() {
 	return (
 		<div className="all-elements">
 			{produtos.map(item =>
-				item.produtoEncerrado !== true &&
+				// item.produtoEncerrado !== true &&
 				<Barraproduto item={item} />
 			)}
 		</div>

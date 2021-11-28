@@ -17,14 +17,14 @@ function FormLogin() {
       email,
       senha
     }
-    api.post('login', dados)
+    api.post('login/admin', dados)
       .then(res => {
         console.log(res)
         localStorage.setItem("token", res.data.token)
         window.location.href = '/'
       })
       .catch(e => {
-        console.log(e.response.data.message)
+        console.log(e.response.data)
         alert(e.response.data.message)
       })
   }

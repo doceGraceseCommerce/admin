@@ -14,12 +14,12 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route {...rest} render={props => (
       isLogin()
         ?
-        <>
+        <div className="wrap-all">
           <div>
             <Sidebar />
           </div>
           <Component {...props} />
-        </>
+        </div>
         :
         <Redirect to="/Login" />
     )} />

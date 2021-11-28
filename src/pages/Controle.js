@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ControleProdutos from '../components/ControlPanel/ControleProdutos';
 import api from '../services/api';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import '../components/ControlPanel/ControleProduto.css'
 
 function Controle() {
 
@@ -16,28 +19,47 @@ function Controle() {
       })
   }, [])
 
-  const fecharLoja = () => {
-    produtos.map(item => {
-      api.patch(`produtos/${item.id}/status`, { produtoAtivo: false })
+  useEffect(() => {
+    console.log(produtos)
+  }, [produtos])
+
+  const fecharLoja = async () => {
+    try {
+      produtos.map(async (item) => {
+
+        await api.patch(`produtos/${item.id}/status`, { produtoAtivo: false })
+
+      })
+      window.location.reload()
+    } catch (e) {
+      toast.dark(e.response.data.message)
+    }
+  }
+
+  const abrirLoja = async () => {
+    produtos.map(async (item) => {
+      await api.put(`produtos/${item.id}`, item)
         .then(res => {
           console.log(res.data.message)
-          // alert(res.data.message)
+          toast.dark(res.data.message)
         })
         .catch(e => {
-          alert(e.response.data.message)
+          toast.dark(e.response.data.message)
         })
     })
-    window.location.reload()
   }
 
   return (
     <div>
       {produtos.map(item =>
-        item.produtoEncerrado !== true &&
-        <ControleProdutos item={item} listaAtivos={listaAtivos} setListaAtivos={setListaAtivos} />
+        // item.produtoEncerrado !== true &&
+        <ControleProdutos key={item.id} item={item} listaAtivos={listaAtivos} setListaAtivos={setListaAtivos} produtos={produtos} setProdutos={setProdutos} />
       )}
-      {/* <button className="botao-pronta-entrega">ABRIR LOJA</button> */}
-      <button className="botao-pronta-entrega" onClick={fecharLoja}>FECHAR LOJA</button>
+      <div className="controle-botao-centro">
+        <button className="botao-pronta-entrega" onClick={abrirLoja}>ALTERAR PRODUTOS</button>
+        <button className="botao-pronta-entrega" onClick={fecharLoja}>FECHAR LOJA</button>
+        <ToastContainer />
+      </div>      
     </div>
   )
 }

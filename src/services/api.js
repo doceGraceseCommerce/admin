@@ -1,8 +1,8 @@
-import axios from 'axios';
+import axio from 'axios';
 
 const token = localStorage.getItem('token')
 
-const api = axios.create({
+const api = axio.create({
   baseURL: process.env.REACT_APP_BACKEND,
   withCredentials: false,
   headers: {

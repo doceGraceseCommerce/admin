@@ -2,15 +2,16 @@
     background: linear-gradient(90deg, rgba(127,212,198,1) 36%, rgba(153,209,200,1) 87%);
     height: 90px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-size: 1.5rem;
+    padding : 0 10%;
+    border-radius: 4px;
 }
 
 .navbar-logo {
     color: #858AE3;
     justify-content: start;
-    margin-left: 10%;
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
@@ -18,27 +19,26 @@
     width: 20%;
 }
 
+
 .nav-menu {
     font-weight: bold;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: end;
-    /* display: grid;
-    grid-template-columns: repeat(6, auto);
-    grid-gap: 10px; */
+    align-items: center;    
     list-style: none;
     text-align: center;
     width: 70%;
-    justify-content: end;
-    margin-right: 2rem;
-}
+    border-radius: 4px;
+} 
 
 
 .nav-links {
     color: #5C64EB;
     text-decoration: none;
     padding: 0.5rem 1rem;
+    width: 200px;
+    white-space: nowrap;
 }
 
 .nav-links:hover {
@@ -57,11 +57,11 @@
     padding: 10px 25px;
     margin: 2rem auto;
     border-radius: 4px;
-    width: 80%;
     background: #858AE3;
     text-decoration: none;
     color: #fff;
     font-size: 1.5rem;
+    border: none;
 }
 
 .nav-links-mobile:hover {
@@ -73,6 +73,8 @@
 .menu-icon {
     display: none;
 }
+
+
 
 @media screen and (max-width: 960px) {
     .navbarItems {
@@ -137,13 +139,12 @@
 
     .nav-links-mobile {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         text-align: center;
         padding: 10px 50px;
         margin: 2rem auto;
         border-radius: 4px;
-        width: 80%;
         background: #858AE3;
         text-decoration: none;
         color: #fff;

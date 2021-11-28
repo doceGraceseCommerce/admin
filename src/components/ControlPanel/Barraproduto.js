@@ -5,11 +5,11 @@ import api from '../../services/api';
 function Barraproduto(props) {
 
   const handleExcluir = async (id) => {
-    await api.patch(`produtos/${id}/deletado`, {produtoEncerrado: true})
+    await api.delete(`produtos/${id}`)
       .then(res => {
         console.log(res.data.message)
+        alert(res.data.message)
         window.location.reload()
-
       })
       .catch(e => {
         alert(e.response.data.message)
@@ -27,10 +27,10 @@ function Barraproduto(props) {
             <div className="title produto-nome">{props.item.nome}</div>
           </div>
           <div className="produto-descricao">
-            <div className="title produto-descricao">{props.item.preco}</div>
+            <div className="title produto-descricao">{props.item.descricao}</div>
           </div>
           <div className="produto-infNutricional">
-            <div className="title produto-infNutricional">{props.item.quantidade}</div>
+            <div className="title produto-infNutricional">{props.item.inf_nutricionais_produto}</div>
           </div>
         </div>
       </div>

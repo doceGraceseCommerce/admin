@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import api from "../../services/api";
-import { Upload, message, Button } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
 import imagem from '../../assets/images/imagem.png'
 import LinearProgress from '@material-ui/core/LinearProgress';
 import './CadastroProduto.css';
@@ -17,27 +15,33 @@ function CadastroProduto() {
   // const [selectedFile, setSelectedFile] = useState(null);
 
   const handleSubmit = async () => {
-    let data = {
-      nome: nomeProduto,
-      descricao: descricaoProduto,
-      infNutricionaisProduto: infNutricionaisProduto,
-      imagem: fileUrl,
-      preco: 0,
-      quantidade: 0,
-      produtoAtivo: false,
-      produtoEncerrado: false,
+
+    if (nomeProduto.length && descricaoProduto.length && fileUrl.length && infNutricionaisProduto.length) {
+      let data = {
+        nome: nomeProduto,
+        descricao: descricaoProduto,
+        infNutricionaisProduto: infNutricionaisProduto,
+        imagem: fileUrl,
+        preco: 0,
+        quantidade: 0,
+        produtoAtivo: false,
+        // produtoEncerrado: false,
+      }
+      console.log(data)
+      await api.post(`produtos`, data)
+        .then(res => {
+          console.log(res.data)
+          alert(res.data.message)
+          window.location.reload()
+        })
+        .catch(e => {
+          alert("Algo deu errado")
+        })
+    } else {
+      alert("Imagem ausente ou campo não preenchido")
     }
-    console.log(data)
-    await api.post(`produtos`, data)
-      .then(res => {
-        console.log(res.data)
-        alert(res.data.message)
-        window.location.reload()
-      })
-      .catch(e => {
-        alert("Algo deu errado")
-      })
   }
+
 
   const handleImage = async (e) => {
     e.preventDefault();
@@ -100,9 +104,9 @@ function CadastroProduto() {
             {/* <div>{uploadPorcentagem}</div> */}
             <LinearProgress variant="determinate" value={uploadPorcentagem} />
             {doUpload &&
-              <img src={imagem} className="imagem" />}
+              <img src={imagem} className="imagem" alt='product' />}
             {doUpload !== true &&
-              <img src={fileUrl} className="imagem" />}
+              <img src={fileUrl} className="imagem" alt='product' />}
             {/* <Upload {...props}>
             <Button icon={<UploadOutlined />}>Click to Upload</Button>
           </Upload> */}
@@ -120,7 +124,7 @@ function CadastroProduto() {
           </div>
         </div>
         <div>{fileUrl}</div>
-        
+
       </form>
       <button className="cadastrar-botao" type="button" onClick={() => handleSubmit()}>CADASTRAR</button>
     </div>
